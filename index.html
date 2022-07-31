@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js" ></script>
+
+    <link rel="shortcut icon" href="media/favicon.ico">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/home.css">
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $( window ).resize(function(){
+                if( $(this).width() < 615 ){
+                    $('.seta-esquerda').css('display','none');
+                    $('.seta-direita').css('display','none');
+                }else{
+                    if( $('.stories').css('right') == '0px' ){
+                        $('.seta-direita').css('display','block');
+                    }else{
+                        $('.seta-esquerda').css('display', 'block');
+                    }
+                }
+                
+            });
+            $('.seta-direita').click(function(){
+                let storieMove = $('.stories').width() - $('.block-stories').width();
+
+                $('.stories').animate({right: storieMove + "px"}, 250);
+                $('.seta-direita').css('display','none');
+                $('.seta-esquerda').css('display','block');
+                // alert('tamanho da div stories=' + ( ) );
+            });
+            $('.seta-esquerda').click(function(){
+                //$('.stories').css('right','0');
+                $('.stories').animate({right:"0"},250);
+                $('.seta-esquerda').css('display','none');
+                $('.seta-direita').css('display','block');
+            });
+            $('.comentario-like ion-icon').click(function(){
+                $iconeHeart = $(this);
+                if($iconeHeart.attr('name') == 'heart-outline'){
+                    $iconeHeart.attr('name', 'heart'); 
+                    $iconeHeart.css('color', 'red')
+                }else{
+                    $iconeHeart.attr('name', 'heart-outline'); 
+                    $iconeHeart.css('color', 'black');
+                }
+            });
+            
+        });
+        
+    </script>
+    
+    
+    <title>Instagram</title>
+</head>
+<body>
+    <div class="topo">
+        <div class="topo-menu">
+            <div class="icones-esquerda">
+                <a href="#"><div class="icone-instagram"><ion-icon name="logo-instagram"></ion-icon></div></a>
+                <div class="logo"><a href="#"><img src="media/logo.png"/></a></div>
+            </div>
+            <form class="pesquisar" action="#"><input placeholder="Pesquisar" type="text" name="" id=""></form>
+           
+            <div class="icones-direita">
+                <div class="mensagem"><a href="#"><ion-icon name="paper-plane-outline"></a></ion-icon></div>
+                <div class="explorar"><a href="#"><ion-icon name="compass-outline"></a></ion-icon></div>
+                <div class="curtidas"><a href="#"><ion-icon name="heart-outline"></a></ion-icon></div>
+                <div class="perfil"><a href="#"><ion-icon name="person-outline"></a></ion-icon></div>
+            </div>
+        </div>
+        <div class="mobile-topo-menu">
+            <div class="icones-esquerda">
+                <div class="icone-instagram"><a href="#"><ion-icon name="logo-instagram"></a></ion-icon></div>
+                
+            </div>
+            <div class="logo"><a href="#"><img src="media/logo.png"/></a></div>
+            <div class="mensagem"><a href="#"><ion-icon name="paper-plane-outline"></a></ion-icon></div>
+        </div>
+    </div>
+    <div class="conteudo">
+        <div class="conteudo-left">
+            <div class="block-stories">
+                <ion-icon class="seta seta-esquerda" name="chevron-back-circle"></ion-icon>
+                <div class="stories">
+                    
+                    <div class="storie"><a href="#"><div><img src="media/9gag.png"></div><p>9gag</p></a></div>
+                    <div class="storie"><a href="#"><div><img src="media/meowed.png"></div><p>meowed</p></a></div>
+                    <div class="storie"><a href="#"><div><img src="media/barked.png"></div><p>barked</p></a></div>
+                    <div class="storie"><a href="#"><div><img src="media/et.png"></div><p>nathanwpyle...</p></a></div>
+                    <div class="storie"><a href="#"><div><img src="media/wawa.png"></div><p>wawawiwac...</p></a></div>
+                    <div class="storie"><a href="#"><div><img src="media/respondeai.png"></div><p>respondeai</p></a></div>
+                    <div class="storie"><a href="#"><div><img src="media/filo.png"></div><p>filomoderna</p></a></div>
+                    <div class="storie"><a href="#"><div><img src="media/mortadela.png"></div><p>memeriago.</p></a></div>
+                   
+                    
+                    
+                </div>
+                <ion-icon class="seta seta-direita" name="chevron-forward-circle"></ion-icon>
+            </div>
+            <div class="posts">
+                <div class="post">
+                    <div class="post-header">
+                        <div class="post-header-left">
+                            <div class="post-icon-perfil"><a href="#"><img src="media/meowed.png"></a></div>
+                            <div class="post-name"><a href="#">meowed</a></div>
+                        </div>
+                        <div class="post-header-right">
+                            <div class="post-icon-menu">
+                                <a href="#"><ion-icon name="ellipsis-horizontal-outline"></ion-icon></a>    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <img src="media/cat.png" alt="">
+                    </div>
+                    <div class="post-bottom">
+                        <div class="post-bottom-icones">
+                            <div class="post-bottom-icones-left">
+                                <a href="#"><ion-icon name="heart-outline"></ion-icon></a>
+                                <a href="#"><ion-icon name="chatbubble-outline"></ion-icon></a>
+                                <a href="#"><ion-icon name="paper-plane-outline"></ion-icon></a>
+                            </div>
+                            <div class="post-bottom-icones-right">
+                                <a href="#"><ion-icon name="bookmark-outline"></ion-icon></a>
+                            </div>    
+                        </div>
+                        <div class="post-bottom-likes">
+                            <a href="#"><img src="media/respondeai.png" /></a>
+                            <p>Curtido por <strong><a href="#">respondeai</strong></a> e <strong><a href="#">outras 101.523 pessoas</a></strong></p>
+                        </div>
+                        <div class="comentarios">
+                            <a href="#"> <p class="comentarios-ver-todos">Ver todos os 25 comentários</p></a>
+                            <div class="comentario">
+                                <div class="comentario-left">
+                                    <div class="comentario-nick"><strong><a href="#">9gag</a></strong> </div>
+                                    <div class="comentario-texto">Que assim seja</div>
+                                </div>
+                            
+                                <div class="comentario-like">
+                                    <ion-icon name="heart-outline"></ion-icon>
+                                </div>
+                            </div>
+                            <div class="comentario">
+                                <div class="comentario-left">
+                                    <div class="comentario-nick"><strong><a href="#"> barked</a></strong> </div>
+                                    <div class="comentario-texto">Adorei o gato!</div>
+                                </div>
+                            
+                                <div class="comentario-like">
+                                    <ion-icon name="heart-outline"></ion-icon>
+                                </div>
+                            </div>  
+                        </div>
+                        
+                     </div>
+                     <div class="novo-comentario">
+                        <form>
+                            <a href="#"><ion-icon class="icone-feliz" name="happy-outline"></ion-icon></a>
+                            <input type="text" placeholder="Adicione um comentário..." />
+                            <input type="submit" value="Publicar" onclick="return false"/>
+                        </form>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="post-header">
+                        <div class="post-header-left">
+                            <div class="post-icon-perfil"><a href="#"><img src="media/barked.png"></a></div>
+                            <div class="post-name"><a href="#"> barked</a></div>
+                        </div>
+                        <div class="post-header-right">
+                            <div class="post-icon-menu">
+                                <a href="#"><ion-icon name="ellipsis-horizontal-outline"></ion-icon></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <img src="media/dog.png" alt="">
+                    </div>
+                    <div class="post-bottom">
+                        <div class="post-bottom-icones">
+                            <div class="post-bottom-icones-left">
+                                <a href="#"><ion-icon name="heart-outline"></ion-icon></a>
+                                <a href="#"><ion-icon name="chatbubble-outline"></ion-icon></a>
+                                <a href="#"><ion-icon name="paper-plane-outline"></ion-icon></a>
+                            </div>
+                            <div class="post-bottom-icones-right">
+                                <a href="#"> <ion-icon name="bookmark-outline"></ion-icon></a>
+                            </div>    
+                        </div>
+                        <div class="post-bottom-likes">
+                            <a href="#"> <img src="media/respondeai.png" /></a>
+                            <p>Curtido por <strong><a href="#">adorable_animals</a></strong> e <strong><a href="#"> outras 99.159 pessoas</a></strong></p>
+                        </div>
+                     </div>
+                </div>
+                <div class="post">
+                    <div class="post-header">
+                        <div class="post-header-left">
+                            <div class="post-icon-perfil"><a href="#"><img src="media/9gag.png"></a></div>
+                            <div class="post-name"><a href="#"> 9gag</a></div>
+                        </div>
+                        <div class="post-header-right">
+                            <div class="post-icon-menu">
+                                <a href="#"> <ion-icon name="ellipsis-horizontal-outline"></ion-icon></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                       <video autoplay>
+                           <source src="media/video.mp4" type="video/mp4">
+                           <source src="media/video.ogv" type="video/ogv">
+                       </video>
+                    </div>
+                    <div class="post-bottom">
+                        <div class="post-bottom-icones">
+                            <div class="post-bottom-icones-left">
+                                <a href="#"><ion-icon name="heart-outline"></ion-icon></a>
+                                <a href="#"><ion-icon name="chatbubble-outline"></ion-icon></a>
+                                <a href="#"><ion-icon name="paper-plane-outline"></ion-icon></a>
+                            </div>
+                            <div class="post-bottom-icones-right">
+                                <a href="#"> <ion-icon name="bookmark-outline"></ion-icon></a>
+                            </div>    
+                        </div>
+                        <div class="post-bottom-likes">
+                            <a href="#"> <img src="media/respondeai.png" /></a>
+                            <p>Curtido por <strong><a href="#">adorable_animals</a></strong> e <strong><a href="#">outras 99.159 pessoas</a></strong></p>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="conteudo-right">
+            <div class="sidebar">
+                <div class="profile">
+                    <div class="profile-icone">
+                        <a href="#"> <img src="media/catana.png" alt="" /></a>
+                    </div>
+                    <div class="profile-text">
+                        <p class="suggestions-nickname"><strong><a href="#">catanacomics</a></strong></p>
+                        <p class="suggestions-name">Catana</p>
+                    </div>
+                </div>
+                <div class="suggestions">
+                    <div class="suggestions-header">
+                        <p class="suggestions-title">
+                            Sugestões para você
+                        </p>
+                        <p class="suggestions-seeall">
+                           <a href="#"> Ver tudo</a>
+                        </p>
+                    </div>
+                    <div class="suggestions-list">
+                        <div class="suggestion">
+                            <div class="suggestions-profile">
+                               <a href="#"> <img src="media/badvibes.png" alt=""></a>
+                                <div class="suggestions-text">
+                                    <a href="#" class="suggestions-link-nickname"><p class="suggestions-nickname">bad.vibes.memes</p></a>
+                                    <p class="suggestions-followyou">Segue você</p>
+                                </div>
+                            </div>
+                            <div class="suggestions-follow">
+                                <a href="#"> <p>Seguir</p></a>
+                            </div>
+                        </div>
+                        <div class="suggestion">
+                            <div class="suggestions-profile">
+                                <a href="#"><img src="media/chibi.png" alt=""></a>
+                                <div class="suggestions-text">
+                                    <a href="#" class="suggestions-link-nickname"><p class="suggestions-nickname">chibirdart</p></a>
+                                    <p class="suggestions-followyou">Segue você</p>
+                                </div>
+                            </div>
+                            <div class="suggestions-follow">
+                                <a href="#"> <p>Seguir</p></a>
+                            </div>
+                        </div> 
+                        <div class="suggestion">
+                            <div class="suggestions-profile">
+                                <a href="#"><img src="media/razoes.png" alt=""></a>
+                                <div class="suggestions-text">
+                                    <a href="#" class="suggestions-link-nickname"><p class="suggestions-nickname">razoesparaacreditar</p></a>
+                                    <p class="suggestions-followyou">Segue você</p>
+                                </div>
+                            </div>
+                            <div class="suggestions-follow">
+                                <a href="#"> <p>Seguir</p></a>
+                            </div>
+                        </div>  
+                        <div class="suggestion">
+                            <div class="suggestions-profile">
+                                <a href="#"><img src="media/adorable.png" alt=""></a>
+                                <div class="suggestions-text">
+                                    <a href="#" class="suggestions-link-nickname"><p class="suggestions-nickname">adorable_animals</p></a>
+                                    <p class="suggestions-followyou">Segue você</p>
+                                </div>
+                            </div>
+                            <div class="suggestions-follow">
+                                <a href="#"> <p>Seguir</p></a>
+                            </div>
+                        </div>
+                        <div class="suggestion">
+                            <div class="suggestions-profile">
+                                <a href="#"><img src="media/small.png" alt=""></a>
+                                <div class="suggestions-text">
+                                    <a href="#" class="suggestions-link-nickname"><p class="suggestions-nickname">smallcutecats</p></a>
+                                    <p class="suggestions-followyou">Segue você</p>
+                                </div>
+                            </div>
+                            <div class="suggestions-follow">
+                                <a href="#"><p>Seguir</p></a>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+                <div class="sidebar-bottom">
+                    <p><a href="#"> Sobre</a> • <a href="#"> Ajuda</a> • <a href="#"> Imprensa</a> • <a href="#"> API</a> • <a href="#"> Carreiras</a> • <a href="#"> Privacidade</a> • <a href="#"> Termos</a> • <a href="#"> Localizações</a> • <a href="#"> Contas mais relevantes</a> • <a href="#"> Hashtags</a> • <a href="#"> Idioma</a></p>
+                    <p>© 2021 INSTAGRAM DO FACEBOOK</p>
+                </div>
+
+                
+
+            </div>
+        </div>        
+    </div>
+    <div class="menu-inferior">
+        <div class="menu-inferior-centralizado">
+            <ion-icon name="home"></ion-icon>
+            <ion-icon name="search-outline"></ion-icon>
+            <ion-icon name="add-circle-outline"></ion-icon>
+            <ion-icon name="heart-outline"></ion-icon>
+            <ion-icon name="person-outline"></ion-icon>
+        </div>
+        
+    </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>    
+</body>
+</html>
